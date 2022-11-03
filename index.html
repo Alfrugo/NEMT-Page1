@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three JS Canvas resize</title>
+</head>
+<body>
+
+    <canvas id="cnv"></canvas>
+    
+    <script type="module">
+        import * as THREE from 'https://cdn.skypack.dev/three@0.137.5';
+
+        let cnv
+        window.onload = function() {
+            console.log ('loading...')
+            cnv = document.getElementById('cnv')
+            cnv.style.backgroundColor = '#282a36'
+            resizeCanvas()
+            const renderer = new THREE.WebGLRenderer({cnv})
+        }
+
+        function resizeCanvas() {
+            cnv.width = window.innerWidth*0.5
+            // cnv.height = window.innerHeight*0.5
+            cnv.height = 200
+        }
+
+    </script>
+</body>
+
+</html>
